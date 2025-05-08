@@ -1,0 +1,29 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+.task-item {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-item h3 {
+  margin: 0;
+}
+
+.task-item p {
+  color: #666;
+}
+
+.task-item button {
+  width: auto;
+  margin-right: 10px;
+}
+
+form {
+  margin-bottom: 20px;
+}

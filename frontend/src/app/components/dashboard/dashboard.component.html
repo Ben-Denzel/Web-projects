@@ -1,0 +1,18 @@
+<div class="dashboard-container">
+  <h2>Welcome to your Tasks</h2>
+
+  <form (submit)="createTask()">
+    <input type="text" [(ngModel)]="newTask.title" name="title" placeholder="Task Title" required>
+    <input type="text" [(ngModel)]="newTask.description" name="description" placeholder="Description">
+    <button type="submit">Add Task</button>
+  </form>
+
+  <div *ngFor="let task of tasks" class="task-item">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <button (click)="editTask(task)">Edit</button>
+    <button (click)="deleteTask(task._id)">Delete</button>
+  </div>
+
+  <button (click)="logout()">Logout</button>
+</div>
