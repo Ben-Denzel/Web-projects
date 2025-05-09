@@ -1,6 +1,5 @@
+<button class="logout-btn" (click)="logout()">Logout</button>
 <div class="dashboard-container">
-  <button class="logout-btn" (click)="logout()">Logout</button>
-
   <h2>Welcome to your Tasks</h2>
 
   <form (ngSubmit)="createTask()" #taskForm="ngForm" class="task-form">
@@ -10,15 +9,25 @@
   </form>
 
   <div class="tasks-list">
-    <div *ngFor="let task of tasks" class="task-item">
-      <div class="task-details">
-        <h3>{{ task.title }}</h3>
-        <p>{{ task.description }}</p>
-      </div>
-      <div class="task-actions">
-        <button class="edit-btn" (click)="editTask(task)">Edit</button>
-        <button class="delete-btn" (click)="deleteTask(task._id)">Delete</button>
-      </div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>
+            <button class="edit-btn" (click)="editTask(task)">Edit</button>
+            <button class="delete-btn" (click)="deleteTask(task._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
+
