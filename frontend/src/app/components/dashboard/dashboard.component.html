@@ -21,7 +21,7 @@
         <tr *ngFor="let task of tasks">
           <td>{{ task.title }}</td>
           <td>{{ task.description }}</td>
-          <td>
+          <td class="f">
             <button class="edit-btn" (click)="editTask(task)">Edit</button>
             <button class="delete-btn" (click)="deleteTask(task._id)">Delete</button>
           </td>

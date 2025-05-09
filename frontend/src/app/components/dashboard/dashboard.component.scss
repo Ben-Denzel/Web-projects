@@ -1,5 +1,6 @@
 /* Logout button */
 .logout-btn {
+  width: max-content;
   margin-top: 2rem;
   padding: 0.75rem;
   background-color: #ff0000;
@@ -115,6 +116,7 @@
 
 /* Action Buttons */
 .tasks-list button {
+  width: max-content;
   margin-right: 0.5rem;
   padding: 0.4rem 0.8rem;
   border: none;
@@ -142,45 +144,6 @@
   background-color: #b02a37;
 }
 
-/* Responsive Table */
-@media (max-width: 600px) {
-  .tasks-list table,
-  .tasks-list thead,
-  .tasks-list tbody,
-  .tasks-list th,
-  .tasks-list td,
-  .tasks-list tr {
-    display: block;
-    width: 100%;
-  }
-
-  .tasks-list thead {
-    display: none;
-  }
-
-  .tasks-list tr {
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0.5rem;
-    background-color: #fff;
-  }
-
-  .tasks-list td {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border: none;
-  }
-
-  .tasks-list td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    color: #333;
-  }
-
-  .tasks-list td:last-child {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
+.f{
+  display: flex;
 }
