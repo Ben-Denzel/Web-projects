@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+  //private URL = 'http:localhost:5000/api/auth';
+
   private URL = 'https://task-manager-backend-hu0f.onrender.com/api/auth';
 
   constructor(private http: HttpClient, private router: Router) { }
