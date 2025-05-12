@@ -1,5 +1,6 @@
 <div class="login-container">
   <h2>Login</h2>
+  <app-loader *ngIf="loading"></app-loader>
   <form (ngSubmit)="onLogin()" #loginForm="ngForm">
     <div class="form-group">
       <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" required>

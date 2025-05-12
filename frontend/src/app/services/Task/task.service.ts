@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TaskService {
-  //private URL = 'http:localhost:5000/api/tasks';
+  //private URL = 'http://localhost:5000/api/tasks';
 
   private URL = 'https://task-manager-backend-hu0f.onrender.com/api/tasks';
 

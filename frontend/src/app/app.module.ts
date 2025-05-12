@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     DashboardComponent,
     LoginComponent,
     NavbarComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

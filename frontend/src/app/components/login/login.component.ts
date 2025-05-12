@@ -10,16 +10,24 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
   user = { username: '', password: '' };
+  loading = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(){
+    this.loading = true;
     this.authService.login(this.user).subscribe({
       next: (res) =>{
         localStorage.setItem('token', res.token);
         this.router.navigate(['/dashboard']);
       },
-      error: (err) => alert('Login Faild: '+ err.error)
+      error: (err) => {
+        alert('Login Faild: '+ err.error)
+        this.loading = false
+      },
+      complete: () =>{
+        this.loading = false
+      }
     });
   }
 
