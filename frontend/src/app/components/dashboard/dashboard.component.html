@@ -2,7 +2,7 @@
 
 <button class="logout-btn" (click)="logout()">Logout</button>
 <div class="dashboard-container">
-  <h2>Welcome to your Tasks</h2>
+  <h2>Welcome to your h Tasks</h2>
 
   <form (ngSubmit)="createTask()" #taskForm="ngForm" class="task-form">
     <input type="text" [(ngModel)]="newTask.title" name="title" placeholder="Task Title" required>

@@ -3,6 +3,7 @@ import { TaskService } from '../../services/Task/task.service';
 import { AuthService } from '../../services/Auth/auth.service';
 import { Router } from '@angular/router';
 
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,7 +17,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private taskService: TaskService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -46,11 +48,10 @@ export class DashboardComponent implements OnInit {
       next: (newTask) => {
         // Immediately add the new task to the local list
         this.tasks.push(newTask);
-        this.newTask = { title: '', description: '' };  // Clear form
+        this.newTask = { title: '', description: '' };
+        this.toastr.success('Task created successfully!');
       },
-      error: (err) => {
-        alert('Failed to add task');
-      },
+      error: () => this.toastr.error('Failed to create task!'),
       complete: () => {
         this.loading = false;  // ✅ Stop loader
       }
@@ -68,10 +69,12 @@ export class DashboardComponent implements OnInit {
       next: () => {
         // Immediately remove the deleted task from local tasks list
         this.tasks = this.tasks.filter(task => task._id !== id);
+        this.toastr.info('Task was deleted successfully!');
+
       },
       error: (err) => {
         console.error('Error deleting task:', err);  // Log detailed error to the console
-        alert('Failed to delete task');
+        this.toastr.error('Failed to delete task!');
         this.loading = false;
       },
       complete: () => {
@@ -93,9 +96,10 @@ export class DashboardComponent implements OnInit {
         next: () => {
           // Update the task locally without re-fetching
           this.tasks = this.tasks.map(t => t._id === task._id ? updatedTask : t);
+          this.toastr.success('Task updated successfully!');
         },
         error: (err) => {
-          alert('Failed to update task');
+          this.toastr.success('Failed to update task');
         },
         complete: () => {
           this.loading = false;  // ✅ Stop loader

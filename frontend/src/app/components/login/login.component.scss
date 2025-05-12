@@ -1,49 +1,54 @@
+/* Container styling */
 .login-container {
+  width: 100%;
   max-width: 400px;
-  margin: 100px auto;
-  padding: 2rem;
-  background: #ffffff;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Heading */
 .login-container h2 {
-  margin-bottom: 1.5rem;
-  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333333;
 }
 
+/* Form elements */
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="password"] {
+.form-group input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 12px 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  font-size: 16px;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: #007bff;
+.form-group input:focus {
+  border-color: #007BFF;
   outline: none;
 }
 
+/* Button styling */
 button[type="submit"] {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
-  color: white;
+  padding: 12px;
+  background-color: #007BFF;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
@@ -55,14 +60,14 @@ button[type="submit"]:disabled {
   cursor: not-allowed;
 }
 
+/* Register text */
 .register-text {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #666;
+  margin-top: 15px;
+  font-size: 14px;
 }
 
 .register-text a {
-  color: #007bff;
+  color: #007BFF;
   text-decoration: none;
 }
 
@@ -70,10 +75,9 @@ button[type="submit"]:disabled {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 480px) {
   .login-container {
-    margin: 50px 20px;
-    padding: 1.5rem;
+    padding: 30px 20px;
   }
 }
