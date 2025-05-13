@@ -11,10 +11,34 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
+  isDarkMode: boolean = false;
+
   constructor(
     private authService: AuthService,
     private router : Router
   ){}
+
+  ngOnInit(): void {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        this.isDarkMode = savedTheme === 'dark';
+      }
+    }
+  }
+
+
+  toggleDarkMode(): void {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      this.isDarkMode = newTheme === 'dark';
+    }
+  }
+
 
   logout() {
     this.authService.logout();

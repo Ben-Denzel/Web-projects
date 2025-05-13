@@ -33,6 +33,10 @@
           <a class="nav-link logout-link" (click)="logout()">Logout</a>
         </li>
       </ul>
+      <button class="btn btn-sm btn-outline-light" (click)="toggleDarkMode()">
+        <i class="fas" [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"></i>
+      </button>
+
     </div>
   </div>
 </nav>
