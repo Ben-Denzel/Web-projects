@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../services/Task/task.service';
-import { AuthService } from '../../services/Auth/auth.service';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
@@ -16,7 +15,6 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
   ) {}
@@ -108,8 +106,4 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-
-  logout() {
-    this.authService.logout();
-  }
 }

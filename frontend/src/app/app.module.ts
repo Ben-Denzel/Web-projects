@@ -15,6 +15,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     NavbarComponent,
     RegisterComponent,
-    LoaderComponent
+    LoaderComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
-      positionClass: 'toast-top-right',
+      positionClass: 'toast-top-center',
       preventDuplicates:true,
     }),
   ],

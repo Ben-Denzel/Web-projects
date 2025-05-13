@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" (click)="dashboard()">Task Manager</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="dashboard()">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="task()">Tasks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

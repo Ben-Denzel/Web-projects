@@ -1,14 +1,13 @@
 <app-loader *ngIf="loading"></app-loader>
 
-<button class="logout-btn" (click)="logout()">Logout</button>
 <div class="dashboard-container">
-  <h2>Welcome to your h Tasks</h2>
+  <h2>Welcome to your Tasks</h2>
 
-  <form (ngSubmit)="createTask()" #taskForm="ngForm" class="task-form">
+  <!-- <form (ngSubmit)="createTask()" #taskForm="ngForm" class="task-form">
     <input type="text" [(ngModel)]="newTask.title" name="title" placeholder="Task Title" required>
     <input type="text" [(ngModel)]="newTask.description" name="description" placeholder="Description">
     <button type="submit" [disabled]="!taskForm.form.valid">Add Task</button>
-  </form>
+  </form> -->
 
   <div class="tasks-list">
     <table>
