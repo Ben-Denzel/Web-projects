@@ -1,61 +1,71 @@
 .task-form {
-  max-width: 400px;
-  margin: 20vh auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px 20px;
+  background-color: var(--form-background, var(--background-color));
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow, rgba(0, 0, 0, 0.1));
+  font-family: var(--font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .task-form .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .task-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
-.task-form input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.task-form button {
-  width: 100%;
-  padding: 10px;
+.task-form input.form-control,
+.task-form select.form-control {
+  padding: 10px 14px;
   font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.task-form button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+  background-color: var(--input-background);
+  color: var(--input-text);
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.task-form input.form-control:focus,
+.task-form select.form-control:focus {
   outline: none;
+  border-color: var(--input-focus-border-color);
+}
+
+.task-form button.btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--button-background);
+  color: var(--button-text, #fff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-form button.btn-primary:hover:not(:disabled) {
+  background-color: var(--button-hover-background);
+}
+
+.task-form button.btn-primary:disabled {
+  background-color: var(--button-disabled-background);
+  cursor: not-allowed;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .task-form {
+    padding: 20px 15px;
+    width: 90%;
+  }
 }

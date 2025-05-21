@@ -1,85 +1,59 @@
-
 :root {
-  --background-color: #f2f2f2;
-  --text-color: #333;
-  --form-background: #fff;
-  --input-background: #fff;
-  --input-text: #000;
-  --button-bg: #007bff;
-  --button-text: #fff;
-  --button-hover-bg: #0056b3;
+  /* Existing */
+  --background-color: #ffffff;
+  --background-color-main: #c9c6c6;
+  --text-color: #333333;
+  --input-background: #ffffff;
+  --input-text: #000000;
+  --button-background: #007BFF;
+  --button-hover-background: #0056b3;
+  --button-disabled-background: #cccccc;
+  --link-color: #007BFF;
+  --input-border-color: #ccc;
+  --input-focus-border-color: #007BFF;
+  --primary-color: #007BFF;
+  --primary-hover: #0056b3;
+  --navbar-bg: #f8f9fa;
+  --navbar-text: #333333;
+
+  /* Additions */
+  --card-background: #fff; /* for cards, modals, containers */
+  --card-shadow: rgba(0, 0, 0, 0.1); /* box shadow color */
+  --border-color: #ddd; /* generic border color */
+  --hover-background: #e9ecef; /* hover bg for buttons, list items */
+  --error-color: #dc3545; /* for errors, alerts */
+  --success-color: #28a745; /* success messages */
+  --warning-color: #ffc107; /* warnings */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s;
 }
 
 [data-theme='dark'] {
-  --background-color: #1e1e1e;
+  /* Existing */
+  --background-color: #2a2a2a;
+  --background-color-main: #424141;
   --text-color: #f2f2f2;
-  --form-background: #2c2c2c;
   --input-background: #3c3c3c;
   --input-text: #f2f2f2;
-  --button-bg: #0d6efd;
-  --button-text: #fff;
-  --button-hover-bg: #0b5ed7;
-}
+  --button-background: #0d6efd;
+  --button-hover-background: #0b5ed7;
+  --button-disabled-background: #555555;
+  --link-color: #66b2ff;
+  --input-border-color: #444;
+  --input-focus-border-color: #0d6efd;
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --navbar-bg: #2c2c2c;
+  --navbar-text: #f2f2f2;
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-}
-
-input, button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 16px;
-  background-color: var(--input-background);
-  color: var(--input-text);
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--button-hover-bg);
-}
-
-form {
-  background: var(--form-background);
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 8px;
-  max-width: 400px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-}
-
-a {
-  color: var(--button-bg);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  form {
-    padding: 15px;
-    width: 90%;
-  }
-  .dashboard-container {
-    padding: 10px;
-  }
+  /* Additions */
+  --card-background: #3a3a3a;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --border-color: #555;
+  --hover-background: #444444;
+  --error-color: #e4606d;
+  --success-color: #5cbd7f;
+  --warning-color: #d6b451;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s;
 }

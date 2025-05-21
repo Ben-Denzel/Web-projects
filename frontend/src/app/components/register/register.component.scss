@@ -1,73 +1,81 @@
-/* Container styling */
 .register-container {
   width: 100%;
   max-width: 400px;
   margin: 80px auto;
   padding: 40px 30px;
-  background-color: #ffffff;
+  background-color: var(--card-background);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px var(--card-shadow);
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-/* Heading */
 .register-container h2 {
   margin-bottom: 20px;
   font-size: 28px;
-  color: #333333;
+  color: var(--text-color);
 }
 
-/* Form inputs */
-.register-container form input {
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"] {
   width: 100%;
   padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border-color);
   border-radius: 8px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  background-color: var(--input-background);
+  color: var(--input-text);
   font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
 }
 
-.register-container form input:focus {
-  border-color: #0056b3;
+.register-container input[type="text"]:focus,
+.register-container input[type="password"]:focus {
+  border-color: var(--input-focus-border-color);
   outline: none;
 }
 
-/* Button styling */
 .register-container button[type="submit"] {
-  width: 100%;
   padding: 12px;
-  background-color: #0056b3;
-  color: #ffffff;
+  background-color: var(--button-background);
+  color: var(--button-text, #fff);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-speed);
 }
 
 .register-container button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover-background);
 }
 
-/* Login link */
 .register-container p {
   margin-top: 15px;
   font-size: 14px;
+  color: var(--text-color);
 }
 
 .register-container a {
-  color: #0056b3;
+  color: var(--link-color);
   text-decoration: none;
+  transition: color var(--transition-speed);
 }
 
 .register-container a:hover {
   text-decoration: underline;
+  color: var(--button-hover-background);
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 480px) {
   .register-container {
     padding: 30px 20px;
