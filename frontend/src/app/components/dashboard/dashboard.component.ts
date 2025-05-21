@@ -22,7 +22,6 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadTasks();
     this.route.queryParams.subscribe(params => {
       const token = params['token'];
       if (token) {
@@ -30,7 +29,13 @@ export class DashboardComponent implements OnInit {
         // Navigate to the actual dashboard
         this.router.navigate(['/dashboard']);
       }
+      this.loadTasks();
     });
+
+    // If no token in query params (e.g., returning user), still load tasks
+  if (!this.route.snapshot.queryParams['token']) {
+    this.loadTasks();
+  }
   }
 
   loadTasks() {
