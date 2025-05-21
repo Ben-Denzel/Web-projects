@@ -15,6 +15,7 @@
         <tr>
           <th>Title</th>
           <th>Description</th>
+          <th>Category</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@
         <tr *ngFor="let task of tasks">
           <td>{{ task.title }}</td>
           <td>{{ task.description }}</td>
+          <th>{{task.category}}</th>
           <td class="f">
             <button class="edit-btn" (click)="editTask(task)">Edit</button>
             <button class="delete-btn" (click)="deleteTask(task._id)">Delete</button>

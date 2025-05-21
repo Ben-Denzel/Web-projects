@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../services/Task/task.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -10,17 +11,26 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class DashboardComponent implements OnInit {
   tasks: any[] = [];
-  newTask = { title: '', description: '' };
+  newTask = { title: '', description: '', category:'' };
   loading = false;  // ✅ ADD THIS
 
   constructor(
     private taskService: TaskService,
     private router: Router,
+    private route : ActivatedRoute,
     private toastr: ToastrService
   ) {}
 
   ngOnInit() {
     this.loadTasks();
+    this.route.queryParams.subscribe(params => {
+      const token = params['token'];
+      if (token) {
+        localStorage.setItem('token', token);
+        // Navigate to the actual dashboard
+        this.router.navigate(['/dashboard']);
+      }
+    });
   }
 
   loadTasks() {
@@ -46,7 +56,7 @@ export class DashboardComponent implements OnInit {
       next: (newTask) => {
         // Immediately add the new task to the local list
         this.tasks.push(newTask);
-        this.newTask = { title: '', description: '' };
+        this.newTask = { title: '', description: '',category:'' };
         this.toastr.success('Task created successfully!');
       },
       error: () => this.toastr.error('Failed to create task!'),

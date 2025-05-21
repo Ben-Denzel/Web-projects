@@ -14,6 +14,11 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  loginWithGoogle() {
+    window.location.href = 'https://task-manager-backend-hu0f.onrender.com/api/auth/google';
+    // window.location.href = 'http://localhost:5000/api/auth/google';
+  }
+
   onLogin(){
     this.loading = true;
     this.authService.login(this.user).subscribe({
