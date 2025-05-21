@@ -65,8 +65,8 @@ router.get('/google/callback',
         expiresIn: '1h'
       });
       // Redirect to Angular with token as query param
-      res.redirect(`http://localhost:4200/dashboard?token=${token}`);
-      //res.redirect(`https://ben-task.vercel.app/dashboard?token=${token}`);
+      //res.redirect(`http://localhost:4200/dashboard?token=${token}`);
+      res.redirect(`https://ben-task.vercel.app/dashboard?token=${token}`);
     }
   );
   
